@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: linen;
+}
+
+td {
+    border-top-style: solid;
+}
+</style>
+</head>
+<body>
+
+<table style="width:100%">
+  <tr style="font-weight:bold; background-color: orange">
+    <td width="300px">Single-instance version cases</td>
+    <td>Graph Results Screenshot</td>
+    <td>Average Query Time(ms)</td>
+    <td>Average Search Servlet Time(ms)</td>
+    <td>Average JDBC Time(ms)</td>
+    <td>Analysis</td>
+  </tr>
+  <tr>
+    <td>Case 1: HTTP/1 thread</td>
+    <td><img src="img/che_1.png" alt="Graph Results Screenshot Case 1" style="width:304px;height:228px;"></td>
+    <td>50</td>
+    <td>1.7547</td>
+    <td>1.077</td>
+    <td>This is the base run and we compare others to this.</td>
+  </tr>
+  <tr>
+    <td>Case 2: HTTP/10 threads</td>
+    <td><img src="img/che_2.png" alt="Graph Results Screenshot Case 2" style="width:304px;height:228px;"></td>
+    <td>78</td>
+    <td>3.6521</td>
+    <td>2.7591</td>
+    <td>This is running 10 thread vs 1 thread for case 1, so the times are higher as we are running more searches concurrently</td>
+  </tr>
+  <tr>
+    <td>Case 3: HTTPS/10 threads</td>
+    <td><img src="img/che_3.png" alt="Graph Results Screenshot Case 3" style="width:304px;height:228px;"></td>
+    <td>81</td>
+    <td>3.9344</td>
+    <td>2.8940</td>
+    <td>This one uses HTTPS, and because of https overhead this one is slightly slower that case 2.</td>
+  </tr>
+  <tr>
+    <td>Case 4: HTTP/10 threads/No prepared statements</td>
+    <td><img src="img/che_4.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>98</td>
+    <td>3.568</td>
+    <td>2.711</td>
+    <td>This one does not use prepared statemnets, theoretically this should be slower than case 2 but in our case this is faster a little bit. It seems prepared statement does not provide a huge change and the fastness could be due to chance.</td>
+  </tr>
+  <tr>
+    <td>Case 5: HTTP/10 threads/No connection pooling</td>
+    <td><img src="img/che_5.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>201</td>
+    <td>115.6549</td>
+    <td>113.8147</td>
+    <td>This one does not use connection pooling and therefore is slower than all others. It seems having connection pooling helps much better than only having prepared statement. </td>
+  </tr>
+
+</table> 
+
+
+<table style="width:100%">
+  <tr style="font-weight:bold; background-color: orange">
+    <td width="300px">Scaled version cases</td>
+    <td>Graph Results Screenshot</td>
+    <td>Average Query Time(ms)</td>
+    <td>Average Search Servlet Time(ms)</td>
+    <td>Average JDBC Time(ms)</td>
+    <td>Analysis</td>
+  </tr>
+  <tr>
+    <td>Case 1: HTTP/1 thread</td>
+    <td><img src="img/che_6.png" alt="Graph Results Screenshot Case 1" style="width:304px;height:228px;"></td>
+    <td>53</td>
+    <td>1.9765</td>
+    <td>1.0463</td>
+    <td>This is the scaled version of case 1, and as we expected the results are faster than case 1 in single instances. Altough this is not becuase of load balancing. This case is one thread in jmeter so the difference is due to chance because we will have one session and all requests will go to either master or either slave in this case. </td>
+  </tr>
+  <tr>
+    <td>Case 2: HTTP/10 threads</td>
+    <td><img src="img/che_7.png" alt="Graph Results Screenshot Case 2" style="width:304px;height:228px;"></td>
+    <td>69</td>
+    <td>2.4599</td>
+    <td>2.2061</td>
+    <td>As we expected this one is faster that case 2 in singles instances and this is because of load balancing. We are running 10 threads this time so load balancing can help us.</td>
+  </tr>
+  <tr>
+    <td>Case 3: HTTP/10 threads/No prepared statements</td>
+    <td><img src="img/che_8.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>80</td>
+    <td>2.0551</td>
+    <td>1.3017</td>
+    <td> Also in this we are faster than equivalant case (case 4) in single instances and this is due to load balancing.</td>
+  </tr>
+  <tr>
+    <td>Case 4: HTTP/10 threads/No connection pooling</td>
+    <td><img src="img/che_9.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>190</td>
+    <td>104.9355</td>
+    <td>104.1383</td>
+    <td>This one is faster than its equavalent case in singles (case 5) and its because of load balancing. </td>
+  </tr>
+
+</table> 
+
+</body>
+</html>

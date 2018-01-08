@@ -1,0 +1,46 @@
+*{
+    font: 13px/1.5, Geneva, Trebuchet-MS, Arial, sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -box-sizing: border-box;
+    padding:0;
+    margin:0;
+    list-style:none;
+    box-sizing: border-box;
+}
+div#main_content {
+	position: absolute;
+	top: 150px;
+	left: 150px;
+}
+body,html{
+    height:100%;
+}
+body{
+    background:url(../Images/web_login_bg.jpg) no-repeat center;
+    background-size: cover;
+}
+table{
+	border: 0px;
+}
+
+table tr  td {
+	border: 0px;
+	padding-right: 50px;
+}
+
+button.button_submit{
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #27A9E3;
+    border: 0px;
+    width: 75px;
+}
+img#movie_poster {
+	width: 150px;
+	height: 200px;
+}

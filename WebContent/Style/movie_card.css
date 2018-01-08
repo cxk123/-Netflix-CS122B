@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+#templateMovieCardContent
+{
+	min-width: 100px;
+    min-height: 100px;
+    background-color: #FFF;
+}
+
+#templateMovieCardContainer
+{
+    position:absolute;
+    z-index: 9999;
+    left:0;
+    top:0;
+    box-shadow: 0px 0px 10px #888888;
+}

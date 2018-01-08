@@ -1,0 +1,63 @@
+*{
+    font: 13px/1.5, Geneva, Trebuchet-MS, Arial, sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -box-sizing: border-box;
+    padding:0;
+    margin:0;
+    list-style:none;
+    box-sizing: border-box;
+}
+body,html{
+    height:100%;
+}
+body{
+    background:url(../Images/web_login_bg.jpg) no-repeat center;
+    background-size: cover;
+}
+div#main_content{
+	position: relative;
+	top: 150px;
+	left: 150px;
+	
+}
+button{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #27A9E3;
+    border-radius: 3px;
+    border: none;
+    -webkit-appearance: none;
+    outline:none;
+    width:100%;
+}
+.button_submit{
+	color: #ffffff;
+    background-color: #27A9E3;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border: 0px;
+    width: 75px;
+}
+
+.button_table{
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    background-color: #27A9E3;
+    border: 0px;
+    width: 120px;
+}
+
+table {
+	width: 900px;
+}
+
+table tr > td {
+	padding-bottom: 20px;
+}
