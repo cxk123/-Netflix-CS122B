@@ -1,4 +1,4 @@
-eeeeeee“Netflix"
+eeee“Netflix"
 A school project for UCI CS122Beee
 eeeeeeeeeeeee
 whole structure should look like this:
