@@ -1,6 +1,6 @@
 aaaae“Netflix"
 A school project for UCI CS122Beee
-eeaaa
+eeaaaaaaaaaaaaaaaaaaa
 whole structure fffffffffffffffshould look like this:
-eeead
+eeeadeeeeeeeeeeeeee
 ![image](https://github.com/cxk123/-Netflix-CS122B/blob/master/images/struture.PNG)
